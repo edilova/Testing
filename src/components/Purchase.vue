@@ -23,8 +23,6 @@
                     </div>
                 </div>
                 <div class="line-grey"></div>
-
-                <!--<p class="purchase-text-1 font-14">Информация о покупателе</p>-->
                 <div class="purchase-your-city-in purchase-your-info">
                     <p class="purchase-text-4 font-14">Информация о покупателе</p>
                     <span class="font-14"><button class="font-14" @click="isEditing = !isEditing">
@@ -33,8 +31,6 @@
                      <button v-if="isEditing" @click="isEditing = false" class="font-14">Отмена</button>
                     </span>
                 </div>
-                <!--<span class="font-14">Изменить</span>-->
-
                 <div class="purchase-info">
                     <div  :class="{'d-none': isEditing}">
                         <p class="purchase-text-2 font-12">ФИО:</p>
@@ -47,7 +43,6 @@
                         <p class="purchase-text-3 font-14"><input class="edit-save-before" type="text" v-model="user.email" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
                     </div>
                 </div>
-
                 <div class="line-grey"></div>
                 <p class="purchase-text-1 font-14">Адрес доставки</p>
                 <div class="purchase-input-country">
@@ -86,7 +81,6 @@
                                <p class="purchase-text-4 font-14"><input class="edit-save-before" type="text" v-model="city" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
                             </div>
                         </div>
-                        <!--<p class="purchase-text-4 font-14">г. Алматы</p>-->
                         <span class="font-14"><button class="font-14" @click="isEditing = !isEditing">
                         {{ isEditing ? 'Сохранить' : 'Изменить' }}
                         </button>
@@ -117,9 +111,7 @@
                 </div>
                 <div class="block-btn"><button class="font-14"  @click="gotoBuy">Продолжить покупку</button></div>
             </div>
-
         </div>
-
     </div>
 </template>
 
@@ -130,7 +122,6 @@
     import 'vue-material/dist/theme/default.css'
 
     Vue.use(VueMaterial)
-
 
     export default {
         name: "Purchase",
@@ -158,7 +149,6 @@
         },
         methods: {
             goBack(){
-                // this.$router.push('/filter')
                 this.$router.push({ path: '/purchasetype' })
             },
             selectType(selectedType){
@@ -251,7 +241,6 @@
             line-height: 20px;
             font-family: 'Roboto', sans-serif;
             color: $mainColor3
-
         }
     }
     .purchase-your-info{
