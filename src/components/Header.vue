@@ -4,14 +4,10 @@
             <nav>
                 <div class="header-block">
                     <div><label for="nav"><img class="icon-logo" src="../assets/images/menu.svg" alt=""></label></div>
-
                     <h1 class="font-18">Nomstore</h1>
                     <div class="for-input font-12"><input type="text" v-model="search" placeholder="Поиск..."></div>
-                    <!--<a href="#" class="logo">Logo</a>-->
-
                     <input type="checkbox" id="nav" />
                     <img class="icon-logo" src="../assets/images/shopping-cart.svg" alt="">
-
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Service</a></li>
