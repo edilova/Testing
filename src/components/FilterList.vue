@@ -142,6 +142,7 @@
             </collapse>
             <div class="line-grey-out"><div class="line-grey"></div></div>
         </div>
+        <div class="block-btn"><button class="font-14" @click="acceptFilter">Применить</button></div>
     </div>
 </template>
 
@@ -194,7 +195,9 @@
         },
         methods: {
             goBack(){
-                // this.$router.push('/filter')
+                this.$router.push({ path: '/' })
+            },
+            acceptFilter(){
                 this.$router.push({ path: '/' })
             },
             selectTab(selectedTab){
@@ -374,6 +377,21 @@
         line-height: 20px;
         font-family: 'Open Sans', sans-serif;
         font-weight: normal;
+    }
+    .block-btn{
+        width: 290px;
+        height: 40px;
+        background: #792A22;
+        border-radius: 4px;
+        margin: 1.5rem auto 1.5rem auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        line-height: 20px;
+        button{
+            text-align: center;
+            color: #FFFFFF;
+        }
     }
 
 </style>
