@@ -14,7 +14,6 @@
                     <div class="radio-wrapper" v-for="item in buttons2" >
                         <div v-on:click="provide2(item)" v-bind:class="{clicked2: contains(check, item)}" class="tab-unchecked"></div><div><p class="collapse-text-type font-14">{{item.name}}</p></div>
                     </div>
-
                 </div>
             </collapse>
             <div class="line-grey-out"><div class="line-grey"></div></div>
@@ -197,9 +196,6 @@
             goBack(){
                 // this.$router.push('/filter')
                 this.$router.push({ path: '/' })
-            },
-            selectProduct(){
-                this.checkedProduct = ! this.checkedProduct
             },
             selectTab(selectedTab){
                 this.currentTab = selectedTab
