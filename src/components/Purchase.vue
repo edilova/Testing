@@ -77,14 +77,14 @@
                     </div>
                     <div class="purchase-your-city-in">
                         <div class="purchase-info">
-                            <div  :class="{'d-with-100': isEditing}">
-                               <p class="purchase-text-4 font-14"><input class="edit-save-before" type="text" v-model="city" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
+                            <div  :class="{'d-with-100': isEditing2}">
+                               <p class="purchase-text-4 font-14"><input class="edit-save-before" type="text" v-model="city" :disabled="!isEditing2" :class="{'edit-save': isEditing2}"></p>
                             </div>
                         </div>
-                        <span class="font-14"><button class="font-14" @click="isEditing = !isEditing">
-                        {{ isEditing ? 'Сохранить' : 'Изменить' }}
+                        <span class="font-14"><button class="font-14" @click="isEditing2 = !isEditing2">
+                        {{ isEditing2 ? 'Сохранить' : 'Изменить' }}
                         </button>
-                         <button v-if="isEditing" @click="isEditing = false" class="font-14">Отмена</button>
+                         <button v-if="isEditing2" @click="isEditing2 = false" class="font-14">Отмена</button>
                         </span>
                     </div>
                 </div>
@@ -139,6 +139,7 @@
                 ],
                 currentType: 1,
                 isEditing: false,
+                isEditing2: false,
                 user: {
                     name: 'Асан Н.Е',
                     email: 'smith@gmail.com',
