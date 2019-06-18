@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    <!--<ProductList></ProductList>-->
     <router-view/>
   </div>
 </template>
 
 <script>
-  import ProductList from './components/ProductList'
 
 export default {
     name: 'app',
-    // components:{
-    //   ProductList
-    // }
 }
 </script>
 
@@ -23,5 +18,4 @@ export default {
   body{
     background-color: #fff;
   }
-
 </style>
