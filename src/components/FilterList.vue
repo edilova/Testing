@@ -12,7 +12,7 @@
                 </div>
                 <div slot="collapse-body">
                     <div class="radio-wrapper" v-for="item in buttons2" >
-                        <div v-on:click="provide2(item)" v-bind:class="{clicked2: contains(check, item)}" class="tab-unchecked"></div><div><p>{{item.name}}</p></div>
+                        <div v-on:click="provide2(item)" v-bind:class="{clicked2: contains(check, item)}" class="tab-unchecked"></div><div><p class="collapse-text-type font-14">{{item.name}}</p></div>
                     </div>
 
                 </div>
@@ -182,11 +182,11 @@
                 buttons2: [
                     {name: 'Ноутбуки (23)'},
                     {name: 'Наушники (123)'},
-                    {name: 'Смартфоны'},
-                    {name: 'Планшеты'},
-                    {name: 'Плейеры'},
-                    {name: 'Чехлы для ноутбуков'},
-                    {name: 'Чехлы для смартфонов'},
+                    {name: 'Смартфоны (24)'},
+                    {name: 'Планшеты (134)'},
+                    {name: 'Плейеры (5)'},
+                    {name: 'Чехлы для ноутбуков (32)'},
+                    {name: 'Чехлы для смартфонов (24)'},
                 ],
                 sizes: [],
                 check: [],
@@ -265,6 +265,8 @@
         }
     }
     .filter-body{
+        background-color: #fff;
+        margin-top: 0.5rem;
     }
     .line-grey{
         width: 341px;
@@ -368,12 +370,53 @@
         background: url(../assets/images/checked-checkbox.png);
         background-size: cover;
     }
+    .collapse-text-type{
+        line-height: 20px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: normal;
+    }
 
 </style>
 
-<style>
+<style lang="scss">
+    @import '../assets/styles/main.scss';
 
     .collapse-content{
         background-color: #fff!important;
+    }
+    .collapse .collapse-header{
+        background-color: #fff;
+    }
+    .collapse .collapse-header::before {
+        -webkit-transition: all .2s !important;
+        transition: all .2s !important;
+        content: url(../assets/images/arrow-down.svg) !important;
+        position: absolute !important;
+        font-size: 0.4em !important;
+        top: calc(50% - 0.4em) !important;
+        left: 90% !important;
+        color: #c5c9d0 !important;
+        -webkit-transform: rotate(0deg) !important;
+        transform: rotate(0deg) !important;
+    }
+    .collapse.is-active .collapse-header::before {
+        -webkit-transform: rotate(180deg) !important;
+        transform: rotate(180deg) !important;
+    }
+    .md-checkbox.md-theme-default.md-checked .md-checkbox-container{
+        background-color: $mainColor1 !important;
+        border-color: $mainColor1 !important;
+    }
+    .md-radio.md-theme-default.md-checked .md-radio-container{
+        border-color: var(--md-theme-default-accent, $mainColor1);
+    }
+    button{
+        border: 0;
+        background-color: transparent;
+    }
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 </style>

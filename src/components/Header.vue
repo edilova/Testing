@@ -50,6 +50,7 @@
             height: 4rem;
             align-items: center;
             justify-content: space-around;
+            padding: 0.6rem 1rem 0rem 1rem;
             h1{
                 font-family: 'Roboto', sans-serif;
             }
@@ -61,9 +62,9 @@
         box-shadow: 0px 4px 4px rgba(231, 231, 231, 0.25);
     }
     .for-input{
+        width: 50%;
         background: #F4F4F4;
         border-radius: 4px;
-        margin: 0px 10px 0px 10px;
     }
     input{
         height: 2rem;

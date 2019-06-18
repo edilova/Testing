@@ -27,7 +27,7 @@
                     <div v-bind:class="{'activeImg': currentImg == 2 }" class="line-button" @click="selectImg(2)"></div>
                     <div v-bind:class="{'activeImg': currentImg == 3 }" class="line-button" @click="selectImg(3)"></div>
                 </div>
-                <div class="line-grey"></div>
+                <div class="line-grey-out"><div class="line-grey"></div></div>
                 <div class="block-with-star">
                     <div class="font-12 font-type-1">BMW</div>
                     <div class="stars">
@@ -44,17 +44,28 @@
                     <div class="font-type-3 font-14">318 000 000тнг</div>
                     <div><p class="font-10 font-type-4">в рассрочку <span class="font-12">123 990т</span> х12 мес</p></div>
                 </div>
-                <div class="line-grey"></div>
+                <div class="line-grey-out"><div class="line-grey"></div></div>
                 <div class="block-changes">
                     <div>
                         <p class="font-type-4 font-10">Ширина, высота, диаметр</p>
-                        <p class="font-type-3 font-14">185 / 55 / 55</p>
+                        <!--<p class="font-type-3 font-14">185 / 55 / 55</p>-->
+                        <div class="purchase-info">
+                            <div  :class="{'d-with-100': isEditing}">
+                                <p class="purchase-text-3 font-14"><input class="edit-save-before" type="text" v-model="param.id" :disabled="!isEditing" :class="{'edit-save': isEditing} "></p>
+                            </div>
+                        </div>
+
                     </div>
                     <div>
-                        <button class="font-type-5 font-14">Изменить опции</button>
+                        <!--<button class="font-type-5 font-14">Изменить опции</button>-->
+                        <span class="font-14 "><button class="font-14 font-type-5" @click="isEditing = !isEditing">
+                        {{ isEditing ? 'Сохранить' : 'Изменить опции' }}
+                        </button>
+                         <button v-if="isEditing" @click="isEditing = false" class="font-14 font-type-5">Отмена</button>
+                        </span>
                     </div>
                 </div>
-                <div class="line-grey"></div>
+                <div class="line-grey-out"><div class="line-grey"></div></div>
                 <div class="block-counter">
                     <button class="minus-btn" @click="decrementCounter"></button>
                     <p class="font-18">{{counter}}</p>
@@ -88,6 +99,10 @@
                 currentTab: 1,
                 counter: 1,
                 currentImg: 1,
+                isEditing: false,
+                param: {
+                    id: '185 / 55 / 50',
+                }
             }
         },
         components:{
@@ -124,6 +139,7 @@
         box-shadow: 0px 4px 4px rgba(231, 231, 231, 0.25);
         margin-top: 0.7rem;
         display: flex;
+        padding: 0rem 1rem 0rem 1rem;
     }
     .top-filter-left, .top-filter-right{
         width: 50%;
@@ -137,7 +153,7 @@
         display: inline-block;
         font: inherit;
         line-height: 1.5em;
-        padding: 0.5em 0.5em 0.5em 0.5em;
+        padding: 0.5em 1.5em 0.5em 0.5em;
         color: $mainColor3;
         font-weight: 500;
         font-family: 'Roboto', sans-serif;
@@ -235,8 +251,11 @@
             background: $mainColor1,
         }
     }
+    .line-grey-out{
+        padding: 0rem 1rem 0rem 1rem;
+    }
     .line-grey{
-        width: 341px;
+        width: 100%;
         height: 1px;
         background: rgba(40, 47, 54, 0.15);
         margin-left: auto;
@@ -324,5 +343,19 @@
     .font-type-5{
         line-height: 20px;
         color: $mainColor3;
+    }
+    .edit-save-before{
+         background-color: transparent;
+         border: none;
+     }
+    .edit-save{
+        width: 100%;
+        height: 40px;
+        background: #FFFFFF;
+        border: 1px solid rgba(40, 47, 54, 0.15);
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-left: 1rem;
+        outline: none;
     }
 </style>

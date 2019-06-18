@@ -42,9 +42,9 @@
                         <p class="purchase-text-2 font-12">E-mail адрес:</p>
                     </div>
                     <div  :class="{'d-with-100': isEditing}">
-                        <p class="purchase-text-3 font-14"><input type="text" v-model="user.name" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
-                        <p class="purchase-text-3 font-14"><input type="text" v-model="user.phone" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
-                        <p class="purchase-text-3 font-14"><input type="text" v-model="user.email" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
+                        <p class="purchase-text-3 font-14"><input class="edit-save-before" type="text" v-model="user.name" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
+                        <p class="purchase-text-3 font-14"><input class="edit-save-before" type="text" v-model="user.phone" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
+                        <p class="purchase-text-3 font-14"><input class="edit-save-before" type="text" v-model="user.email" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
                     </div>
                 </div>
 
@@ -340,6 +340,10 @@
             text-align: center;
             color: #FFFFFF;
         }
+    }
+    .edit-save-before{
+        background-color: transparent;
+        border: none;
     }
     .edit-save{
         width: 100%;

@@ -220,6 +220,18 @@
 
 <style lang="scss" scoped>
     @import '../assets/styles/main.scss';
+    @media screen and (max-width: 768px){
+        .product-container{
+            width: 10rem!important;
+        }
+        .top-filter{
+            padding: 0rem 1rem 0rem 1rem !important;
+        }
+        .product-container2{
+            width: 97.5% !important;
+        }
+
+    }
 
     .top-filter{
         height: 40px;
@@ -228,6 +240,7 @@
         box-shadow: 0px 4px 4px rgba(231, 231, 231, 0.25);
         margin-top: 0.7rem;
         display: flex;
+        padding: 0rem 1.5rem 0rem 1.5rem;
     }
     .top-filter-left, .top-filter-right{
         width: 50%;
@@ -242,7 +255,7 @@
             margin: 0px 4px 0px 4px;
         }
         button{
-            padding: 0.3rem 1rem 0.5rem 0rem;
+            padding: 0.3rem 0rem 0.5rem 0rem;
             line-height: 1.5em;
         }
     }
@@ -257,7 +270,7 @@
         display: inline-block;
         font: inherit;
         line-height: 1.5em;
-        padding: 0.5em 0.5em 0.5em 0.5em;
+        padding: 0.5em 1.5em 0.5em 0.5em;
         color: $mainColor3;
         font-family: 'Roboto', sans-serif;
     }
@@ -283,7 +296,7 @@
         margin-top: 1rem;
     }
     .product-container{
-        width: 10rem;
+        width: 19rem;
         height: 14rem;
         background: #FFFFFF;
         border: 1px solid #F4F4F4;
@@ -349,7 +362,7 @@
         }
     }
     .product-container2{
-        width: 96.5%;
+        width: 60%;
         height: 8rem;
         background: #FFFFFF;
         border: 1px solid #F4F4F4;
