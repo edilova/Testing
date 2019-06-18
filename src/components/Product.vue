@@ -48,7 +48,6 @@
                 <div class="block-changes">
                     <div>
                         <p class="font-type-4 font-10">Ширина, высота, диаметр</p>
-                        <!--<p class="font-type-3 font-14">185 / 55 / 55</p>-->
                         <div class="purchase-info">
                             <div  :class="{'d-with-100': isEditing}">
                                 <p class="purchase-text-3 font-14"><input class="edit-save-before" type="text" v-model="param.id" :disabled="!isEditing" :class="{'edit-save': isEditing} "></p>
@@ -57,7 +56,6 @@
 
                     </div>
                     <div>
-                        <!--<button class="font-type-5 font-14">Изменить опции</button>-->
                         <span class="font-14 "><button class="font-14 font-type-5" @click="isEditing = !isEditing">
                         {{ isEditing ? 'Сохранить' : 'Изменить опции' }}
                         </button>
@@ -122,7 +120,6 @@
                 this.counter--;
             },
             gotoPurchaseType(){
-                // this.$router.push('/filter')
                 this.$router.push({ path: '/purchasetype' })
             },
         }
@@ -163,7 +160,6 @@
         background-size: 12px;
         font-family: 'Roboto', sans-serif;
     }
-
     select.minimal:focus {
         outline: 0;
     }
@@ -171,7 +167,6 @@
         color: transparent;
         text-shadow: 0 0 0 #000;
     }
-
     .product-container{
         width: 100%;
         height: auto;
