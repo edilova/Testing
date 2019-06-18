@@ -10,9 +10,6 @@
            <div class="top-filter-right">
                <button v-bind:class="{'activeTab': currentTab == 1}" @click="selectTab(1)"  class="tab-1"></button>
                <button v-bind:class="{'activeTab2': currentTab == 2}" @click="selectTab(2)"  class="tab-2"></button>
-
-               <!--<img v-bind:class="{'activeTab': currentTab == 1}" @click="selectTab(1)" src="../assets/images/setka.svg" alt="" width="23">-->
-               <!--<img v-bind:class="{'activeTab2': currentTab == 2}" @click="selectTab(2)" src="../assets/images/menu-three-outlined-rounded-lines-symbol.svg" alt="" width="23">-->
                <div class="line-vertical"></div>
                <img src="../assets/images/Vector.svg" alt="" width="23">
                <button class="font-12" @click="gotoFilter" >Фильтр</button>
@@ -204,14 +201,12 @@
         },
         methods:{
             gotoFilter(){
-                // this.$router.push('/filter')
                 this.$router.push({ path: '/filter' })
             },
             selectTab(selectedTab){
                 this.currentTab = selectedTab
             },
             gotoProduct(){
-                // this.$router.push('/filter')
                 this.$router.push({ path: '/product' })
             },
         }
@@ -220,6 +215,7 @@
 
 <style lang="scss" scoped>
     @import '../assets/styles/main.scss';
+
     @media screen and (max-width: 768px){
         .product-container{
             width: 10rem!important;
@@ -230,9 +226,7 @@
         .product-container2{
             width: 97.5% !important;
         }
-
     }
-
     .top-filter{
         height: 40px;
         width: 100%;
@@ -326,7 +320,6 @@
         .product-description{
             height: 50%;
         }
-
         h5{
             padding: 1rem 1rem 0.3rem 1rem;
             line-height: 20px;
@@ -393,7 +386,6 @@
         .product-description{
             width: 50%;
         }
-
         h5{
             padding: 1rem 1rem 0.3rem 1rem;
             line-height: 20px;
