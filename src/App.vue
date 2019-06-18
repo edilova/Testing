@@ -20,5 +20,8 @@ export default {
   #app{
     background-color: #fff;
   }
+  body{
+    background-color: #fff;
+  }
 
 </style>

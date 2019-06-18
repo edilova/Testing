@@ -30,7 +30,7 @@
                     <span class="font-14"><button class="font-14" @click="isEditing = !isEditing">
                         {{ isEditing ? 'Сохранить' : 'Изменить' }}
                     </button>
-                     <button v-if="isEditing" @click="isEditing = false" class="font-14">Cancel</button>
+                     <button v-if="isEditing" @click="isEditing = false" class="font-14">Отмена</button>
                     </span>
                 </div>
                 <!--<span class="font-14">Изменить</span>-->
@@ -64,7 +64,7 @@
                 <div class="purchase-input">
                     <input class="font-14"  type="text" placeholder="Квартира/Офис">
                 </div>
-                <div class="block-btn"><button class="font-14">Купить</button></div>
+                <div class="block-btn"><button class="font-14" @click="gotoBuy">Купить</button></div>
             </div>
             <div v-if="currentType == 2">
                 <p class="purchase-text-1 font-14">Можно забрать</p>
@@ -81,8 +81,17 @@
                         <p class="purchase-text-2 font-12">Ваш город</p>
                     </div>
                     <div class="purchase-your-city-in">
-                        <p class="purchase-text-4 font-14">г. Алматы</p>
-                        <span class="font-14">Изменить</span>
+                        <div class="purchase-info">
+                            <div  :class="{'d-with-100': isEditing}">
+                               <p class="purchase-text-4 font-14"><input class="edit-save-before" type="text" v-model="city" :disabled="!isEditing" :class="{'edit-save': isEditing}"></p>
+                            </div>
+                        </div>
+                        <!--<p class="purchase-text-4 font-14">г. Алматы</p>-->
+                        <span class="font-14"><button class="font-14" @click="isEditing = !isEditing">
+                        {{ isEditing ? 'Сохранить' : 'Изменить' }}
+                        </button>
+                         <button v-if="isEditing" @click="isEditing = false" class="font-14">Отмена</button>
+                        </span>
                     </div>
                 </div>
 
@@ -106,7 +115,7 @@
                         <p class="font-12 type-2">Пн-Пт 09:00-22:00 ; Сб-Вс 09:00-12:00   </p>
                     </div>
                 </div>
-                <div class="block-btn"><button class="font-14" @click="gotoNext">Продолжить покупку</button></div>
+                <div class="block-btn"><button class="font-14"  @click="gotoBuy">Продолжить покупку</button></div>
             </div>
 
         </div>
@@ -143,7 +152,8 @@
                     name: 'Асан Н.Е',
                     email: 'smith@gmail.com',
                     phone: '8 707 123 45 46'
-                }
+                },
+                city: 'г. Алматы',
             }
         },
         methods: {
@@ -153,8 +163,10 @@
             },
             selectType(selectedType){
                 this.currentType = selectedType
+            },
+            gotoBuy(){
+                this.$router.push({ path: '/' })
             }
-
         },
     }
 </script>
@@ -194,10 +206,10 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 500;
             color: $mainColor2;
-            padding: 0.5rem 1rem 0.5rem 1rem;
+            padding: 0.8rem 1rem 0.8rem 1rem;
         }
         .purchase-button-1, .purchase-button-2{
-            width: 170px;
+            width: 100%;
             height: 40px;
             background: #FFFFFF;
             border: 1px solid $mainColor3;
@@ -215,6 +227,7 @@
     .btn-wraper{
         display: flex;
         justify-content: center;
+        padding: 0.8rem 1rem 0.8rem 1rem;
     }
     .purchase-button-1{
         border-radius: 4px 0px 0px 4px;
@@ -222,7 +235,7 @@
     .purchase-button-2{
         border-radius: 0px 4px 4px 0px;
     }
-    .purchase-info,{
+    .purchase-info{
         display: flex;
         padding: 0.5rem 1rem 0.5rem 1rem;
     }
@@ -233,6 +246,7 @@
     .purchase-your-city-in{
         display: flex;
         justify-content: space-between;
+        align-items: center;
         button{
             line-height: 20px;
             font-family: 'Roboto', sans-serif;
@@ -241,7 +255,7 @@
         }
     }
     .purchase-your-info{
-        padding: 0.5rem 1rem 0.5rem 1rem;
+        padding: 1.5rem 1rem 0.6rem 1rem;
     }
     .purchase-text-2{
         line-height: 20px;
@@ -360,5 +374,34 @@
     }
     .d-with-100{
         width: 100%;
+    }
+</style>
+
+<style lang="scss">
+    .md-field.md-theme-default:after {
+         background-color: transparent;
+    }
+    .md-field.md-clearable .md-input {
+        width: 100%;
+        height: 40px;
+        background: #FFFFFF;
+        border: 1px solid rgba(40, 47, 54, 0.15);
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-left: 1rem;
+        outline: none;
+    }
+    .md-field.md-theme-default:before {
+        background-color: transparent!important;
+        background-color: var(--md-theme-default-primary, transparent) !important;
+    }
+    .md-field label{
+        padding-left: 1rem;
+        font-size: 14px;
+        line-height: 20px;
+        font-family: 'Open Sans', sans-serif;
+    }
+    .md-button.md-theme-default{
+        margin-top: inherit;
     }
 </style>

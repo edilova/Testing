@@ -179,7 +179,7 @@
         border: 1px solid #F4F4F4;
         box-sizing: border-box;
         border-radius: 4px;
-        margin-bottom: 0.9rem;
+        /*margin-bottom: 0.9rem;*/
         display: block;
         align-items: center;
         .product-images{

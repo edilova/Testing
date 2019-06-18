@@ -38,7 +38,7 @@
                     <p class="price font-10">от <span class="font-14"> 318 000 000тнг </span></p>
                 </div>
             </div>
-            <div class="product-container">
+            <div class="product-container" @click="gotoProduct">
                 <div class="product-images">
                     <img class="product" src="../assets/images/product15.svg" alt="">
                     <img class="favorites" src="../assets/images/heart-in-like-circular-button.svg" alt="" width="25">
@@ -57,7 +57,7 @@
                     <p class="price font-10">от <span class="font-14"> 318 000 000тнг </span></p>
                 </div>
             </div>
-            <div class="product-container">
+            <div class="product-container" @click="gotoProduct">
                 <div class="product-images">
                     <img class="product" src="../assets/images/product15.svg" alt="">
                     <img class="favorites" src="../assets/images/heart-in-like-circular-button.svg" alt="" width="25">
@@ -76,7 +76,7 @@
                     <p class="price font-10">от <span class="font-14"> 318 000 000тнг </span></p>
                 </div>
             </div>
-            <div class="product-container">
+            <div class="product-container" @click="gotoProduct">
                 <div class="product-images">
                     <img class="product" src="../assets/images/product15.svg" alt="">
                     <img class="favorites" src="../assets/images/heart-in-like-circular-button.svg" alt="" width="25">

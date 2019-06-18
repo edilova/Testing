@@ -17,7 +17,7 @@
 
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     ЦЕНА
@@ -26,7 +26,7 @@
                     frf
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     ЦВЕТ
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     РАЗМЕР ЭКРАНА
@@ -57,7 +57,7 @@
                     </div>
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     ОТЗЫВЫ ПОКУПАТЕЛЕЙ
@@ -105,7 +105,7 @@
                     </div>
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     ВСТРОЕННАЯ ПАМЯТЬ
@@ -114,7 +114,7 @@
                     frf
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     ЗАДНЯЯ КАМЕРА
@@ -123,7 +123,7 @@
                     frf
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     ПЕРЕДНЯЯ КАМЕРА
@@ -132,7 +132,7 @@
                     frf
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
             <collapse :selected="false">
                 <div slot="collapse-header">
                     РАЗРЕШЕНИЕ ЭКРАНА
@@ -141,7 +141,7 @@
                     frf
                 </div>
             </collapse>
-            <div class="line-grey"></div>
+            <div class="line-grey-out"><div class="line-grey"></div></div>
         </div>
     </div>
 </template>
@@ -268,12 +268,16 @@
         background-color: #fff;
         margin-top: 0.5rem;
     }
+    .line-grey-out{
+        padding: 0rem 1rem 0rem 1rem;
+    }
     .line-grey{
-        width: 341px;
+        width: 100%;
         height: 1px;
         background: rgba(40, 47, 54, 0.15);
         margin-left: auto;
         margin-right: auto;
+        margin-top: 1rem;
     }
     .md-checkbox {
         display: flex;
@@ -386,6 +390,7 @@
     }
     .collapse .collapse-header{
         background-color: #fff;
+        padding: 20px 20px 5px 40px !important;
     }
     .collapse .collapse-header::before {
         -webkit-transition: all .2s !important;
@@ -402,6 +407,9 @@
     .collapse.is-active .collapse-header::before {
         -webkit-transform: rotate(180deg) !important;
         transform: rotate(180deg) !important;
+    }
+    .collapse .collapse-content-box{
+        border-bottom: none!important;
     }
     .md-checkbox.md-theme-default.md-checked .md-checkbox-container{
         background-color: $mainColor1 !important;
